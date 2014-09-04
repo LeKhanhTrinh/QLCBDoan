@@ -1,6 +1,14 @@
 <?php
+ob_start();
+session_start();
 include_once("header.php");
+if( isset($_SESSION["login_user"]) ) {
+	header('Location: so-yeu-ly-lich.php');
+	exit();
+} else { 
+
 ?>
+
 <body>
 <header class="art-header">
     <div class="art-shapes">
@@ -77,3 +85,6 @@ include_once("header.php");
 
 
 </body></html>
+<?php
+}
+?>

@@ -1,5 +1,12 @@
 <?php
+ob_start();
+session_start();
 include_once("header.php");
+if( !isset($_SESSION["login_user"]) ) {
+	header('Location: index.php');
+	exit();
+} else { 
+
 ?>
 
 <body>
@@ -282,3 +289,6 @@ include_once("header.php");
 
 
 </body></html>
+<?php
+}
+?>

@@ -1,7 +1,12 @@
 <?php
-
+ob_start();
+session_start();
 include_once("header.php");
-if( isset($_SESSION["login_user"]) ) {
+if( !isset($_SESSION["login_user"]) ) {
+	header('Location: index.php');
+	exit();
+} else { 
+
 ?>
 <body>
 <header class="art-header">
@@ -542,8 +547,6 @@ if( isset($_SESSION["login_user"]) ) {
 
 
 </body></html>
-<?php } else { 
-	//echo "test";
-	header('Location: ../index.php');
-}?>
-		
+<?php
+}
+?>
