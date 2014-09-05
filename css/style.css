@@ -22,7 +22,7 @@
    cursor:default;
    overflow:hidden;
 }
-table, ul.art-hmenu
+table, ul.art-hmenu, ul.art-hmenu-user
 {
    font-size: 13px;
    font-family: 'Trebuchet MS', Arial, Helvetica, Sans-Serif;
@@ -284,7 +284,7 @@ ul.art-vmenu a
    font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
 }
 
-header, footer, article, nav, #art-hmenu-bg, .art-sheet, .art-hmenu a, .art-vmenu a, .art-slidenavigator > a, .art-checkbox:before, .art-radiobutton:before
+header, footer, article, nav, #art-hmenu-bg, .art-sheet, .art-hmenu a, .art-hmenu-user a, .art-vmenu a, .art-slidenavigator > a, .art-checkbox:before, .art-radiobutton:before
 {
    -webkit-background-origin: border !important;
    -moz-background-origin: border !important;
@@ -471,14 +471,15 @@ li p, .art-postcontent li p, .art-blockcontent li p
    text-align: left;
 }
 
-ul.art-hmenu a, ul.art-hmenu a:link, ul.art-hmenu a:visited, ul.art-hmenu a:hover 
+ul.art-hmenu a, ul.art-hmenu a:link, ul.art-hmenu a:visited, ul.art-hmenu a:hover, 
+ul.art-hmenu-user a, ul.art-hmenu-user a:link, ul.art-hmenu-user a:visited, ul.art-hmenu-user a:hover
 {
    outline: none;
    position: relative;
    z-index: 11;
 }
 
-ul.art-hmenu, ul.art-hmenu ul
+ul.art-hmenu, ul.art-hmenu ul, ul.art-hmenu-user, ul.art-hmenu-user ul
 {
    display: block;
    margin: 0;
@@ -487,7 +488,7 @@ ul.art-hmenu, ul.art-hmenu ul
    list-style-type: none;
 }
 
-ul.art-hmenu li
+ul.art-hmenu li, ul.art-hmenu-user li
 {
    position: relative;
    z-index: 5;
@@ -499,13 +500,13 @@ ul.art-hmenu li
    border: 0;
 }
 
-ul.art-hmenu li:hover
+ul.art-hmenu li:hover, ul.art-hmenu-user li:hover
 {
    z-index: 10000;
    white-space: normal;
 }
 
-ul.art-hmenu:after, ul.art-hmenu ul:after
+ul.art-hmenu:after, ul.art-hmenu ul:after, ul.art-hmenu-user:after, ul.art-hmenu-user ul:after
 {
    content: ".";
    height: 0;
@@ -515,12 +516,12 @@ ul.art-hmenu:after, ul.art-hmenu ul:after
    clear: both;
 }
 
-ul.art-hmenu, ul.art-hmenu ul 
+ul.art-hmenu, ul.art-hmenu ul , ul.art-hmenu-user, ul.art-hmenu-user ul
 {
    min-height: 0;
 }
 
-ul.art-hmenu 
+ul.art-hmenu, ul.art-hmenu-user
 {
    display: inline-block;
    vertical-align: middle;
@@ -562,21 +563,26 @@ nav.art-nav
    float: left;
 }
 
+.art-hmenu-user
+{
+   float: right;
+}
+
 .art-menuitemcontainer
 {
    margin:0 auto;
 }
-ul.art-hmenu>li {
+ul.art-hmenu>li, ul.art-hmenu-user>li {
    margin-left: 9px;
 }
-ul.art-hmenu>li:first-child {
+ul.art-hmenu>li:first-child, ul.art-hmenu-user>li:first-child {
    margin-left: 4px;
 }
-ul.art-hmenu>li:last-child, ul.art-hmenu>li.last-child {
+ul.art-hmenu>li:last-child, ul.art-hmenu>li.last-child, ul.art-hmenu-user>li:last-child, ul.art-hmenu-user>li.last-child  {
    margin-right: 4px;
 }
 
-ul.art-hmenu>li>a
+ul.art-hmenu>li>a, ul.art-hmenu-user>li>a
 {
    -webkit-border-radius:7px;
    -moz-border-radius:7px;
@@ -609,7 +615,21 @@ ul.art-hmenu>li>a
    text-align: left;
 }
 
-ul.art-hmenu>li>a.active
+.art-hmenu-user a, 
+.art-hmenu-user a:link, 
+.art-hmenu-user a:visited, 
+.art-hmenu-user a.active, 
+.art-hmenu-user a:hover{
+	font-size: 14px;
+	color: #FFFEEE;
+	font-family: 'Century Gothic', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-style: normal;
+	text-decoration: none;
+	text-align: left;
+}
+
+ul.art-hmenu>li>a.active, ul.art-hmenu-user>li>a.active
 {
    background: #578BA2;
    -webkit-border-radius:7px;
@@ -624,11 +644,15 @@ ul.art-hmenu>li>a.active
 
 ul.art-hmenu>li>a:visited, 
 ul.art-hmenu>li>a:hover, 
-ul.art-hmenu>li:hover>a {
+ul.art-hmenu>li:hover>a,
+ul.art-hmenu-user>li>a:visited, 
+ul.art-hmenu-user>li>a:hover, 
+ul.art-hmenu-user>li:hover>a 
+{
    text-decoration: none;
 }
 
-ul.art-hmenu>li>a:hover, .desktop ul.art-hmenu>li:hover>a
+ul.art-hmenu>li>a:hover, .desktop ul.art-hmenu>li:hover>a, ul.art-hmenu-user>li>a:hover, .desktop ul.art-hmenu-user>li:hover>a
 {
    background: #578BA2;
    -webkit-border-radius:7px;
@@ -639,12 +663,16 @@ ul.art-hmenu>li>a:hover, .desktop ul.art-hmenu>li:hover>a
    margin:0 auto;
 }
 ul.art-hmenu>li>a:hover, 
-.desktop ul.art-hmenu>li:hover>a {
+.desktop ul.art-hmenu>li:hover>a, 
+ul.art-hmenu-user>li>a:hover, 
+.desktop ul.art-hmenu-user>li:hover>a 
+{
    color: #EBEEEF;
    text-decoration: none;
 }
 
-ul.art-hmenu>li:before
+ul.art-hmenu>li:before,
+ul.art-hmenu-user>li:before
 {
    position:absolute;
    display: block;
@@ -655,11 +683,13 @@ ul.art-hmenu>li:before
    height: 26px;
    background: url('../images/menuseparator.png') center center no-repeat;
 }
-ul.art-hmenu>li:first-child:before{
+ul.art-hmenu>li:first-child:before,
+ul.art-hmenu-user>li:first-child:before{
    display:none;
 }
 
-ul.art-hmenu li li a
+ul.art-hmenu li li a,
+ul.art-hmenu-user li li a
 {
    background: #D2D8DB;
    background: transparent;
@@ -669,7 +699,8 @@ ul.art-hmenu li li a
    padding:0 8px;
    margin:0 auto;
 }
-ul.art-hmenu li li 
+ul.art-hmenu li li,
+ul.art-hmenu-user li li 
 {
    float: none;
    width: auto;
@@ -677,17 +708,20 @@ ul.art-hmenu li li
    margin-bottom: 0;
 }
 
-.desktop ul.art-hmenu li li ul>li:first-child 
+.desktop ul.art-hmenu li li ul>li:first-child,
+.desktop ul.art-hmenu-user li li ul>li:first-child 
 {
    margin-top: 0;
 }
 
-ul.art-hmenu li li ul>li:last-child 
+ul.art-hmenu li li ul>li:last-child,
+ul.art-hmenu-user li li ul>li:last-child 
 {
    margin-bottom: 0;
 }
 
-.art-hmenu ul a
+.art-hmenu ul a,
+.art-hmenu-user ul a
 {
    display: block;
    white-space: nowrap;
@@ -706,7 +740,11 @@ ul.art-hmenu li li ul>li:last-child
 .art-hmenu ul a:link, 
 .art-hmenu ul a:visited, 
 .art-hmenu ul a.active, 
-.art-hmenu ul a:hover
+.art-hmenu ul a:hover,
+.art-hmenu-user ul a:link, 
+.art-hmenu-user ul a:visited, 
+.art-hmenu-user ul a.active, 
+.art-hmenu-user ul a:hover
 {
    text-align: left;
    line-height: 23px;
@@ -717,7 +755,8 @@ ul.art-hmenu li li ul>li:last-child
    margin:0;
 }
 
-ul.art-hmenu ul li a:hover, .desktop ul.art-hmenu ul li:hover>a
+ul.art-hmenu ul li a:hover, .desktop ul.art-hmenu ul li:hover>a,
+ul.art-hmenu-user ul li a:hover, .desktop ul.art-hmenu-user ul li:hover>a
 {
    background: #BEC7CB;
    -webkit-border-radius:8px;
@@ -726,17 +765,20 @@ ul.art-hmenu ul li a:hover, .desktop ul.art-hmenu ul li:hover>a
    margin:0 auto;
 }
 
-.art-hmenu ul li a:hover
+.art-hmenu ul li a:hover,
+.art-hmenu-user ul li a:hover
 {
    color: #171B1C;
 }
 
-.desktop .art-hmenu ul li:hover>a
+.desktop .art-hmenu ul li:hover>a,
+.desktop .art-hmenu-user ul li:hover>a
 {
    color: #171B1C;
 }
 
-ul.art-hmenu ul:before
+ul.art-hmenu ul:before,
+ul.art-hmenu-user ul:before
 {
    background: #9FBDCB;
    -webkit-border-radius:8px;
@@ -749,16 +791,19 @@ ul.art-hmenu ul:before
    content: ' ';
    z-index: 1;
 }
-.desktop ul.art-hmenu li:hover>ul {
+.desktop ul.art-hmenu li:hover>ul,
+.desktop ul.art-hmenu-user li:hover>ul  {
    visibility: visible;
    top: 100%;
 }
-.desktop ul.art-hmenu li li:hover>ul {
+.desktop ul.art-hmenu li li:hover>ul,
+.desktop ul.art-hmenu-user li li:hover>ul {
    top: 0;
    left: 100%;
 }
 
-ul.art-hmenu ul
+ul.art-hmenu ul,
+ul.art-hmenu-user ul
 {
    visibility: hidden;
    position: absolute;
@@ -768,42 +813,45 @@ ul.art-hmenu ul
    background-image: url('../images/spacer.gif');
 }
 
-.desktop ul.art-hmenu>li>ul
+.desktop ul.art-hmenu>li>ul,
+.desktop ul.art-hmenu-user>li>ul
 {
    padding: 12px 32px 32px 32px;
    margin: -10px 0 0 -30px;
 }
 
-.desktop ul.art-hmenu ul ul
+.desktop ul.art-hmenu ul ul,
+.desktop ul.art-hmenu-user ul ul
 {
    padding: 32px 32px 32px 14px;
    margin: -32px 0 0 -9px;
 }
 
-.desktop ul.art-hmenu ul.art-hmenu-left-to-right 
+.desktop ul.art-hmenu ul.art-hmenu-left-to-right,
+.desktop ul.art-hmenu-user ul.art-hmenu-left-to-right 
 {
    right: auto;
    left: 0;
    margin: -10px 0 0 -30px;
 }
 
-.desktop ul.art-hmenu ul.art-hmenu-right-to-left 
+.desktop ul.art-hmenu ul.art-hmenu-right-to-left,
+.desktop ul.art-hmenu-user ul.art-hmenu-right-to-left 
 {
    left: auto;
    right: 0;
    margin: -10px -30px 0 0;
 }
 
-.desktop ul.art-hmenu li li:hover>ul.art-hmenu-left-to-right {
+.desktop ul.art-hmenu li li:hover>ul.art-hmenu-left-to-right,
+.desktop ul.art-hmenu-user li li:hover>ul.art-hmenu-left-to-right {
    right: auto;
    left: 100%;
 }
-.desktop ul.art-hmenu li li:hover>ul.art-hmenu-right-to-left {
-   left: auto;
-   right: 100%;
-}
 
-.desktop ul.art-hmenu ul ul.art-hmenu-left-to-right
+
+.desktop ul.art-hmenu ul ul.art-hmenu-left-to-right,
+.desktop ul.art-hmenu-user ul ul.art-hmenu-left-to-right
 {
    right: auto;
    left: 0;
@@ -811,7 +859,8 @@ ul.art-hmenu ul
    margin: -32px 0 0 -9px;
 }
 
-.desktop ul.art-hmenu ul ul.art-hmenu-right-to-left
+.desktop ul.art-hmenu ul ul.art-hmenu-right-to-left,
+.desktop ul.art-hmenu-user ul ul.art-hmenu-right-to-left
 {
    left: auto;
    right: 0;
@@ -819,14 +868,17 @@ ul.art-hmenu ul
    margin: -32px -9px 0 0;
 }
 
-.desktop ul.art-hmenu li ul>li:first-child {
+.desktop ul.art-hmenu li ul>li:first-child,
+.desktop ul.art-hmenu-user li ul>li:first-child {
    margin-top: 0;
 }
-.desktop ul.art-hmenu li ul>li:last-child {
+.desktop ul.art-hmenu li ul>li:last-child,
+.desktop ul.art-hmenu-user li ul>li:last-child {
    margin-bottom: 0;
 }
 
-.desktop ul.art-hmenu ul ul:before
+.desktop ul.art-hmenu ul ul:before,
+.desktop ul.art-hmenu-user ul ul:before
 {
    border-radius: 8px;
    top: 30px;
@@ -835,7 +887,8 @@ ul.art-hmenu ul
    left: 12px;
 }
 
-.desktop ul.art-hmenu>li>ul:before
+.desktop ul.art-hmenu>li>ul:before,
+.desktop ul.art-hmenu-user>li>ul:before
 {
    top: 10px;
    right: 30px;
@@ -843,19 +896,23 @@ ul.art-hmenu ul
    left: 30px;
 }
 
-.desktop ul.art-hmenu>li>ul.art-hmenu-left-to-right:before {
+.desktop ul.art-hmenu>li>ul.art-hmenu-left-to-right:before,
+.desktop ul.art-hmenu-user>li>ul.art-hmenu-left-to-right:before  {
    right: 30px;
    left: 30px;
 }
-.desktop ul.art-hmenu>li>ul.art-hmenu-right-to-left:before {
+.desktop ul.art-hmenu>li>ul.art-hmenu-right-to-left:before,
+.desktop ul.art-hmenu-user>li>ul.art-hmenu-right-to-left:before {
    right: 30px;
    left: 30px;
 }
-.desktop ul.art-hmenu ul ul.art-hmenu-left-to-right:before {
+.desktop ul.art-hmenu ul ul.art-hmenu-left-to-right:before,
+.desktop ul.art-hmenu-user ul ul.art-hmenu-left-to-right:before {
    right: 30px;
    left: 12px;
 }
-.desktop ul.art-hmenu ul ul.art-hmenu-right-to-left:before {
+.desktop ul.art-hmenu ul ul.art-hmenu-right-to-left:before,
+.desktop ul.art-hmenu-user ul ul.art-hmenu-right-to-left:before {
    right: 12px;
    left: 30px;
 }

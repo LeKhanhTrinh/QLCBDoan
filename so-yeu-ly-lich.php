@@ -9,16 +9,28 @@ if( !isset($_SESSION["login_user"]) ) {
 
 ?>
 <body>
+
 <header class="art-header">
+
     <div class="art-shapes">
 
 	</div>
 			
 	<nav class="art-nav">
     <ul class="art-hmenu">
-		<li><a href="so-yeu-ly-lich.php" class="active">Sơ yếu lý lịch</a></li>
+		<li><a href="so-yeu-ly-lich.php" class="active">Sơ yếu lý lịch</a>
+		</li>
 		<li><a href="qua-trinh-hoc-tap-cong-tac.php" class="">Quá trình học tập - công tác</a></li>
 	</ul> 
+	<ul class="art-hmenu-user">
+		<li><a href="#" >Chào, <?=$_SESSION["login_user"]?></a>
+			<ul class="active">
+				<li><a href="#">Hộp thư</a></li>
+				<li><a href="PL/QLTaikhoan/PLchangepass.php">Đổi mật khẩu</a></li>
+				<li><a href="BLL/QLTaikhoan/BLLlogout.php">Thoát</a></li>
+			</ul>
+		</li>
+	</ul>
     </nav>
 
                     
@@ -30,54 +42,55 @@ if( !isset($_SESSION["login_user"]) ) {
                         <div class="art-layout-cell art-content"><article class="art-post art-article">
                                 
                                                 
-                <div class="art-postcontent art-postcontent-0 clearfix"><div class="art-content-layout">
-    <div class="art-content-layout-row">
-    <div class="art-layout-cell layout-item-0" style="width: 100%" >
-       
-		<label for="inputsohieu" class="control-label"><b>Xin chào, <?=$_SESSION["login_user"]?>.</b><a href="giaodienCBCS/logout.php">Thoát</a></label>
-		
-    </div>
-    </div>
-</div>
+                <div class="art-postcontent art-postcontent-0 clearfix">
+				<div class="art-content-layout">
+					<div class="art-content-layout-row">
+					<div class="art-layout-cell layout-item-0" style="width: 100%" >
+					   
+						
+					</div>
+					</div>
+				</div>
 <div class="art-content-layout">
     <div class="art-content-layout-row">
     <div class="art-layout-cell layout-item-1" style="width: 50%" >
         <p></p><p>
                 </p><p></p><p></p><p></p><fieldset style="border: 1px solid lightgray;"><legend><i><b>Thông tin cơ bản</b></i></legend> 
                                         
-                                        <div style:="width:">
-                                                <table style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: hidden; border-color: initial; width: 100%;">
-                                                <tbody>
-                                                <tr>
-                                        			<td style="width: 33%; border-style: hidden"><img width="118" height="102" alt="" class="art-lightbox" src="images/IMG_3894.jpg">
-                <br><p><a href="#" class="art-button">Tải ảnh</a></p></td>
-                                        			<td style="width: 2%; border-style: hidden">
-                                        			</td><td style="width: 65%; border-style: hidden">
-                                        				<!--Số hiệu CB-->
-                                        				<div class="col-lg-9"><label for="inputsohieu" class="control-label"><b>Số hiệu CB</b></label>&nbsp;&nbsp;
-                                        					<input type="text" style="width: 65%" id="inputsohieu" placeholder="Số hiệu cán bộ, công chức">
-                                        				</div>
-                                        				<br>
-                                        				
-                                        				<!--CMND-->
-                                        				<div class="col-lg-9"><label for="inputCMND" class="control-label"><b>Số CMND</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        					<input type="text" style="width: 65%" id="inputCMND" placeholder="CMND">
-                                        				</div>
-                                        				<br>
-                                        				
-                                        				<!--Ngày cấp-->
-                                        				<div class="col-lg-9">
-                                        					<label for="inputngaycap" class="control-label"><b>Ngày cấp</b></label> &nbsp;&nbsp;&nbsp;
-                                        					<input type="text" style="width: 65%" id="inputngaycap" placeholder="12/12/2012">
-                                        				</div>
-                                        				<br>
-                                        			</td>
-                                                </tr>
-                                                </tbody>
-                                                </table>
-                                        		</div>
-                                                
-                                                <br>
+				<div style:="width:">
+						<table style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: hidden; border-color: initial; width: 100%;">
+						<tbody>
+						<tr>
+							<td style="width: 33%; border-style: hidden"><img width="118" height="102" alt="" class="art-lightbox" src="images/IMG_3894.jpg">
+								<br><p><a href="#" class="art-button">Tải ảnh</a></p></td>
+							<td style="width: 2%; border-style: hidden">
+							</td>
+							<td style="width: 65%; border-style: hidden">
+								<!--Số hiệu CB-->
+								<div class="col-lg-9"><label for="inputsohieu" class="control-label"><b>Số hiệu CB</b></label>&nbsp;&nbsp;
+									<input type="text" style="width: 65%" id="inputsohieu" placeholder="Số hiệu cán bộ, công chức">
+								</div>
+								<br>
+								
+								<!--CMND-->
+								<div class="col-lg-9"><label for="inputCMND" class="control-label"><b>Số CMND</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="text" style="width: 65%" id="inputCMND" placeholder="CMND">
+								</div>
+								<br>
+								
+								<!--Ngày cấp-->
+								<div class="col-lg-9">
+									<label for="inputngaycap" class="control-label"><b>Ngày cấp</b></label> &nbsp;&nbsp;&nbsp;
+									<input type="text" style="width: 65%" id="inputngaycap" placeholder="12/12/2012">
+								</div>
+								<br>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+						</div>
+						
+						<br>
                 <!--Họ và tên-->
                         <div class="form-group"><label for="inputhoten" class="col-lg-3 control-label"><b>Họ và tên</b></label>&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" style="width: 60%" id="inputhoten" placeholder="Nguyễn Văn A">
@@ -533,16 +546,14 @@ if( !isset($_SESSION["login_user"]) ) {
 </article></div>
                     </div>
                 </div>
-            </div><footer class="art-footer">
-<p><a href="#">Privacy Policy</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="#">Terms Of Use</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="#">Feedback</a></p>
-<br>
-<p>Copyright © 2011-2012. All Rights Reserved.</p>
-</footer>
+            </div>
+			
+<?php
+		include_once("footer.php");
+	?>
 
     </div>
-    <p class="art-page-footer">
-        <span id="art-footnote-links"><a href="http://www.artisteer.com/" target="_blank">Web Template</a> created with Artisteer.</span>
-    </p>
+    
 </div>
 
 

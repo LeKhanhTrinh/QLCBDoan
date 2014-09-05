@@ -275,16 +275,10 @@ if( !isset($_SESSION["login_user"]) ) {
 </article></div>
                     </div>
                 </div>
-            </div><footer class="art-footer">
-<p><a href="#">Privacy Policy</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="#">Terms Of Use</a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="#">Feedback</a></p>
-<br>
-<p>Copyright © 2011-2012. All Rights Reserved.</p>
-</footer>
-
-    </div>
-    <p class="art-page-footer">
-        <span id="art-footnote-links"><a href="http://www.artisteer.com/" target="_blank">Web Template</a> created with Artisteer.</span>
-    </p>
+            </div>
+<?php
+	include_once("footer.php");
+?>
 </div>
 
 

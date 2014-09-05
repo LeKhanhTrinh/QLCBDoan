@@ -2,11 +2,7 @@
 ob_start();
 session_start();
 include_once("header.php");
-if( isset($_SESSION["login_user"]) ) {
-	header('Location: so-yeu-ly-lich.php');
-	exit();
-} else { 
-
+if( !isset($_SESSION["login_user"]) ) {
 ?>
 
 <body>
@@ -17,7 +13,8 @@ if( isset($_SESSION["login_user"]) ) {
 			
 	<nav class="art-nav">
     <ul class="art-hmenu">
-		<li><a href="index.php" class="active">Trang chủ</a></li>
+		<li><a href="../../index.php" class="active">Trang chủ</a></li>
+		<li><a href="#"><?=$_SESSION["login_user"]?></a></li>
 	</ul> 
     </nav>
 
@@ -30,14 +27,15 @@ if( isset($_SESSION["login_user"]) ) {
 							
 						</div>
 						
-						<div class="art-layout-cell layout-item-1" style="width: 65%" >
+						<div class="art-layout-cell layout-item-1" style="width: 30%" >
 							<br/><br/>
 							<fieldset style="border: 1px solid lightgray">
 								<legend><b>Hướng dẫn</b></legend>
 								<ul class="">
-									<li>Đăng nhập hệ thống</li>
-									<li>Sơ yếu lý lịch</li>
-									<li>Quá trình học tập - công tác</li>
+									<li>Nhập mật khẩu cũ</li>
+									<li>Nhập mật khẩu mới</li>
+									<li>Nhập lại mật khẩu mới</li>
+									<li>Chấp nhận thay đổi</li>
 								</ul>
 							</fieldset>
 							
@@ -47,22 +45,22 @@ if( isset($_SESSION["login_user"]) ) {
 							<div class="art-postcontent art-postcontent-0 clearfix"><p><br/></p></div>
 							<div id="wrapper">
                                 <div id="login" class="animate form">
-									<form  action="BLL/QLTaikhoan/BLLchecklogin.php" method="post" autocomplete="on"> 
-										<h1>Đăng nhập</h1> 
+									<form  action="../../BLL/QLTaikhoan/BLLchangepwd.php" method="post" autocomplete="on"> 
+										<h1>Quên mật khẩu</h1> 
 										<p> 
-											<label for="username" class="uname" data-icon="u" >Tên đăng nhập</label>
-											<input id="username" name="username" required="required" type="text" placeholder="trinhlk"/>
+											<label class="youpasswd" >Mật khẩu hiện tại</label>
+											<input id="curpass" name="curpass" required="required" type="password" placeholder="200892"/>
 										</p>
 										<p> 
-											<label for="password" class="youpasswd" data-icon="p">Mật khẩu </label>
-											<input id="password" name="password" required="required" type="password" placeholder="200892" /> 
+											<label class="youpasswd" >Mật khẩu mới</label>
+											<input id="newpass" name="newpass" required="required" type="password" placeholder="s0m3thing"/>
 										</p>
-										<p class="keeplogin"> 
-											<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
-											<label for="loginkeeping">Giữ trạng thái đăng nhập</label>
+										<p> 
+											<label class="youpasswd">Nhập lại mật khẩu mới </label>
+											<input id="renew" name="renew" required="required" type="password" placeholder="s0m3thing" /> 
 										</p>
 										<p class="signin button"> 
-											<input type="submit" value="Login" /> 
+											<input type="submit" value="Chấp nhận" /> 
 										</p>
 										
 									</form>
