@@ -7,7 +7,7 @@
 		$myusername=addslashes($_POST['username']); 
 		$mypassword=addslashes($_POST['password']); 
 
-		$sql="SELECT * FROM users WHERE username='$myusername' and password='$mypassword'";
+		$sql="SELECT * FROM user WHERE username='$myusername' and password='$mypassword'";
 		$result=mysql_query($sql);
 		$row=mysql_fetch_array($result);
 		$count=mysql_num_rows($result);
@@ -18,6 +18,8 @@
 		{
 			//session_register("myusername");
 			$_SESSION['login_user']=$myusername;
+			$_SESSION['username_user']=$myusername;
+			$_SESSION['type_user']=$row["typeUser_idtype"];
 			header('Location: ../../so-yeu-ly-lich.php');
 		}
 		else 
